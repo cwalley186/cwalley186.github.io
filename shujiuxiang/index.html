@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蜀九香-川味火锅标杆品牌与特色菜品推荐</title>
+    <meta name="description" content="蜀九香官网提供正宗川味火锅体验，详细介绍麻辣红汤锅底、特色菜品及品牌文化。了解蜀九香火锅的食材选择、服务特色及门店分布，品味地道川渝风味。">
+    <meta name="keywords" content="蜀九香, 蜀九香火锅, 川味火锅, 火锅品牌, 火锅菜品, 蜀九香官网">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-red: #D92525;
+            --primary-dark: #8B0000;
+            --accent-gold: #C69C6D;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #F9F9F9;
+            --white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-red);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-red);
+        }
+
+        .header-cta {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .header-cta:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/shujiu/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 12px 35px;
+            font-size: 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .hero-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Title */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* Menu Highlights */
+        .menu-section {
+            background-color: var(--white);
+            padding: 60px 0;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .menu-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 20px;
+            color: var(--white);
+        }
+
+        .menu-info h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .menu-info p {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        /* Brand Culture */
+        .culture-section {
+            background-color: #FFF5F5;
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+
+        .culture-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .culture-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .culture-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .culture-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .culture-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .culture-list li::before {
+            content: "✓";
+            color: var(--primary-red);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .culture-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .culture-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px;
+            margin: 60px auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-gray);
+            font-size: 14px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-red);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C2C2C;
+            color: #CCCCCC;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-red);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 20px;
+            }
+            
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .culture-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                蜀九香 <span>火锅</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#menu">招牌菜品</a></li>
+                    <li><a href="#about">品牌文化</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="header-cta">预订座位</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>地道川味，鲜香麻辣</h1>
+            <p>源自四川成都，传承百年火锅技艺。蜀九香致力于为食客提供高品质的川味火锅体验，让每一口都充满浓郁的地方风味。</p>
+            <a href="#menu" class="hero-btn">探索菜单</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Why Choose Us -->
+        <section class="features-grid">
+            <article class="feature-card">
+                <div class="feature-icon">🌶️</div>
+                <h3>秘制锅底</h3>
+                <p>采用多种天然香料与辣椒慢火熬制，汤底醇厚，辣而不燥，麻而不苦，回味悠长。</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">🥩</div>
+                <h3>新鲜食材</h3>
+                <p>每日新鲜到货，严选优质肉类与蔬菜，确保每一口食材都新鲜健康，安全放心。</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">🥢</div>
+                <h3>专业服务</h3>
+                <p>经验丰富的服务团队，从点餐到涮煮提供全程指导，营造舒适愉悦的用餐环境。</p>
+            </article>
+        </section>
+
+        <!-- Menu Highlights -->
+        <section id="menu" class="menu-section">
+            <div class="section-header">
+                <h2>招牌必点菜品</h2>
+                <p>精选蜀九香人气单品，满足不同食客的味蕾需求</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://picsum.photos/seed/steak/400/600" alt="极品雪花肥牛">
+                    <div class="menu-info">
+                        <h4>极品雪花肥牛</h4>
+                        <p>纹理清晰，肉质鲜嫩，入口即化</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://picsum.photos/seed/shrimp/400/600" alt="极品鲜毛肚">
+                    <div class="menu-info">
+                        <h4>极品鲜毛肚</h4>
+                        <p>七上八下，脆嫩爽口，久涮不老</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://picsum.photos/seed/duck/400/600" alt="鲜鸭肠">
+                    <div class="menu-info">
+                        <h4>鲜鸭肠</h4>
+                        <p>爽脆弹牙，麻辣鲜香，下饭神器</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://picsum.photos/seed/crab/400/600" alt="极品麻辣牛肉">
+                    <div class="menu-info">
+                        <h4>极品麻辣牛肉</h4>
+                        <p>重口味首选，麻辣入味，劲道十足</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Culture -->
+        <section id="about" class="culture-section">
+            <div class="container">
+                <div class="culture-content">
+                    <div class="culture-image">
+                        <img src="https://picsum.photos/seed/restaurant/600/400" alt="蜀九香餐厅环境">
+                    </div>
+                    <div class="culture-text">
+                        <h3>品牌故事与理念</h3>
+                        <p>蜀九香火锅品牌起源于四川成都，自创立以来，始终坚持以“味”为核心，致力于还原最正宗的川渝火锅风味。</p>
+                        <p>我们坚持“锅底是火锅的灵魂”，选用上等牛油、花椒和辣椒，经过几十道工序精心调配，确保每一锅底料都色香味俱全。同时，我们注重食材的溯源与安全，让顾客吃得放心，吃得舒心。</p>
+                        <ul class="culture-list">
+                            <li>传承川味精髓，坚持古法工艺</li>
+                            <li>严格把控食材品质，拒绝劣质原料</li>
+                            <li>提供舒适的用餐环境与贴心服务</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="section-header">
+                <h2>常见问题</h2>
+                <p>关于蜀九香火锅的常见疑问解答</p>
+            </div>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">蜀九香有哪些锅底可选？</div>
+                    <div class="faq-answer">我们提供经典的麻辣锅底、鸳鸯锅（清油红汤）、番茄锅以及菌汤锅等多种选择，满足不吃辣人群的需求。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">用餐高峰期需要提前预订吗？</div>
+                    <div class="faq-answer">建议在周末及节假日用餐高峰期提前通过电话或线上平台预订，以免排队等候。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">是否支持外卖服务？</div>
+                    <div class="faq-answer">目前我们主要提供堂食服务，部分门店可能提供半成品食材配送服务，请咨询具体门店。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">店内有哪些适合小朋友的菜品？</div>
+                    <div class="faq-answer">我们推荐肥牛卷、虾滑、蔬菜拼盘等口感鲜嫩且不辣的菜品，同时提供儿童座椅。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>蜀九香火锅</h4>
+                <p style="font-size: 14px; line-height: 1.8;">致力于为消费者提供正宗、健康、美味的川味火锅体验。从选材到烹饪，每一个环节都追求极致。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">品牌介绍</a></li>
+                    <li><a href="#">门店查询</a></li>
+                    <li><a href="#">招贤纳士</a></li>
+                    <li><a href="#">新闻动态</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>客服热线：400-XXX-XXXX</li>
+                    <li>电子邮箱：contact@shujiuxiang.com</li>
+                    <li>地址：成都市XX区XX路XX号</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 蜀九香火锅 版权所有 | 仅供演示使用</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
