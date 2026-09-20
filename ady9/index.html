@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ady9映画 - 独立影像艺术与视觉叙事平台</title>
+    <meta name="description" content="ady9映画是一个专注于独立短片、实验影像与视觉叙事的在线平台。提供高质量的艺术短片在线观看、导演专访、制作技术解析及影像艺术资讯。">
+    <meta name="keywords" content="ady9映画, 独立电影, 实验影像, 视频平台, 艺术短片, 导演访谈">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --surface-color: #141414;
+            --surface-hover: #1f1f1f;
+            --primary-color: #e50914;
+            --text-main: #ffffff;
+            --text-secondary: #b3b3b3;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-unit * 3);
+            padding-bottom: var(--spacing-unit);
+            border-bottom: 1px solid #333;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 1.5rem;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-more {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .view-more:hover {
+            color: var(--text-main);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+            padding: 15px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-main);
+        }
+
+        .search-icon {
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(to top, var(--bg-color) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.2) 100%), url('https://picsum.photos/seed/cinema/1920/1080') center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(229, 9, 20, 0.2);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(229, 9, 20, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #ddd;
+            margin-bottom: 30px;
+            max-width: 600px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #f40612;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.5);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Feature Grid */
+        .features {
+            padding: var(--spacing-unit * 6) 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--surface-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border: 1px solid #222;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: #444;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Video Grid */
+        .videos-section {
+            padding: var(--spacing-unit * 6) 0;
+            background-color: var(--surface-color);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .video-card {
+            background-color: var(--bg-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            group: hover;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .thumbnail {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-card:hover .thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .video-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .duration {
+            background-color: rgba(0,0,0,0.8);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        /* Director Spotlight */
+        .spotlight-section {
+            padding: var(--spacing-unit * 6) 0;
+        }
+
+        .spotlight-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            background: linear-gradient(90deg, var(--surface-color) 0%, var(--surface-color) 100%);
+            border: 1px solid #333;
+            border-radius: var(--border-radius);
+            padding: 40px;
+        }
+
+        .spotlight-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            min-height: 300px;
+        }
+
+        .spotlight-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .spotlight-content {
+            flex: 1.5;
+        }
+
+        .spotlight-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .spotlight-content p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .spotlight-tags span {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: var(--spacing-unit * 6) 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #333;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 60px 0 30px;
+            border-top: 1px solid #222;
+            margin-top: var(--spacing-unit * 6);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            margin-top: 15px;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .spotlight-container {
+                flex-direction: column;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+            .hero {
+                text-align: center;
+                justify-content: center;
+            }
+            .hero-content {
+                padding: 0 20px;
+            }
+            .btn {
+                width: 100%;
+                margin: 10px 0 0 0;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">ady9<span>映画</span></a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">最新上映</a>
+                <a href="#">导演专栏</a>
+                <a href="#">制作工坊</a>
+                <a href="#">社区论坛</a>
+            </nav>
+            <div class="search-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="hero-tag">独立影像新锐力量</span>
+            <h1>探索光影的无限可能<br>记录不被定义的视觉叙事</h1>
+            <p>ady9映画致力于为独立电影人、视觉艺术家和电影爱好者提供一个展示才华、交流思想的专业平台。在这里，每一个镜头都值得被看见。</p>
+            <div class="hero-actions">
+                <a href="#" class="btn btn-primary">开始探索</a>
+                <a href="#" class="btn btn-outline">提交作品</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">🎥</div>
+                    <h3>高清在线影院</h3>
+                    <p>提供支持4K画质的专业播放器，支持杜比视界与全景声，带来影院级的沉浸式观影体验。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>多元艺术风格</h3>
+                    <p>涵盖剧情片、实验短片、动画、纪录、微电影等多种类型，满足不同观众的艺术审美需求。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>创作者社区</h3>
+                    <p>连接全球独立创作者，提供项目众筹、资源置换、技术问答等全方位的互动支持服务。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Video Section -->
+    <section class="videos-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">本周精选</h2>
+                <a href="#" class="view-more">查看全部 <span>→</span></a>
+            </div>
+            <div class="video-grid">
+                <!-- Video Item 1 -->
+                <article class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://picsum.photos/seed/film1/400/225" alt="短片封面">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <span class="duration">12:45</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">午夜列车：第42章</h3>
+                        <div class="video-meta">
+                            <span>科幻 / 短片</span>
+                            <span>2.3万次观看</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Item 2 -->
+                <article class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://picsum.photos/seed/film2/400/225" alt="短片封面">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <span class="duration">08:30</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">城市边缘的回响</h3>
+                        <div class="video-meta">
+                            <span>剧情 / 人文</span>
+                            <span>1.8万次观看</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Item 3 -->
+                <article class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://picsum.photos/seed/film3/400/225" alt="短片封面">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <span class="duration">15:20</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">算法的异化</h3>
+                        <div class="video-meta">
+                            <span>实验 / 概念</span>
+                            <span>9,500次观看</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Item 4 -->
+                <article class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://picsum.photos/seed/film4/400/225" alt="短片封面">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <span class="duration">05:15</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">无声的呐喊</h3>
+                        <div class="video-meta">
+                            <span>纪录片</span>
+                            <span>3.1万次观看</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spotlight Section -->
+    <section class="spotlight-section">
+        <div class="container">
+            <div class="spotlight-container">
+                <div class="spotlight-image">
+                    <img src="https://picsum.photos/seed/director/800/600" alt="导演专访">
+                </div>
+                <div class="spotlight-content">
+                    <span class="hero-tag">导演专访</span>
+                    <h2>专访独立导演：如何在预算有限的情况下创造无限想象</h2>
+                    <p>本期我们邀请了ady9映画签约导演李默，分享他在制作《霓虹回声》过程中的拍摄心得与剪辑技巧。从胶片感色调的调教到声音设计的细节处理，李默为我们揭开了独立电影制作的神秘面纱。</p>
+                    <div class="spotlight-tags">
+                        <span>李默</span>
+                        <span>制作技巧</span>
+                        <span>后期教程</span>
+                        <span>导演访谈</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" style="margin-top: 20px;">阅读全文</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-header" style="border: none; margin-bottom: 40px;">
+            <h2 class="section-title">常见问题</h2>
+        </div>
+        
+        <div class="faq-item active">
+            <div class="faq-question">
+                ady9映画支持哪些视频格式上传？
+                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="faq-answer">
+                我们支持MP4, MOV, AVI等常见格式。为了保证播放体验，建议上传分辨率不低于1080P的H.264编码视频。如果您是专业创作者，我们更推荐提供ProRes源文件进行转码。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                如何成为ady9映画的合作创作者？
+                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="faq-answer">
+                您可以注册账号后，在“创作中心”提交您的作品集。我们的编辑团队会在3个工作日内进行审核。审核通过后，您的作品将有机会进入首页推荐位，并参与我们的季度评选活动。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                平台是否提供版权保护服务？
+                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="faq-answer">
+                是的，ady9映画采用先进的数字水印技术和内容指纹识别系统，全方位保护创作者的版权。一旦发现未经授权的盗版内容，我们将立即采取法律措施并下架相关链接。
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">ady9<span>映画</span></a>
+                    <p>致力于推动独立影像文化的发展，为全球创作者提供展示舞台，为观众带来优质的艺术内容。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>浏览分类</h4>
+                    <ul>
+                        <li><a href="#">剧情短片</a></li>
+                        <li><a href="#">实验影像</a></li>
+                        <li><a href="#">动画短片</a></li>
+                        <li><a href="#">纪录片</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台简介</a></li>
+                        <li><a href="#">加入团队</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注动态</h4>
+                    <ul>
+                        <li><a href="#">微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">Bilibili</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ady9映画. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                      </html>
