@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="本子节官方主页 - 专业二次元同人本创作展示与交流平台。提供本子节最新资讯、同人作品展示、创作者招募及周边商城服务。">
+    <meta name="keywords" content="本子节,同人本,二次元,同人创作,本子展,画集">
+    <title>本子节-二次元同人创作与作品展示平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b9d;
+            --secondary-color: #c44569;
+            --accent-color: #feca57;
+            --dark-bg: #1a1a2e;
+            --card-bg: #16213e;
+            --text-main: #ffffff;
+            --text-muted: #b2b2b2;
+            --border-radius: 12px;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-nav {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(26, 26, 46, 1)), url('https://picsum.photos/seed/manga/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--text-main);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-main);
+            color: var(--dark-bg);
+        }
+
+        /* Categories */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .cat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .category-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Featured Works (Masonry Layout) */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .work-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .work-card:hover {
+            transform: scale(1.02);
+            z-index: 2;
+        }
+
+        .work-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .work-info {
+            padding: 15px;
+        }
+
+        .work-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: rgba(255, 107, 157, 0.2);
+            color: var(--primary-color);
+        }
+
+        .work-title {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .work-creator {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .work-creator::before {
+            content: '✦';
+            color: var(--accent-color);
+        }
+
+        /* Creator Spotlight */
+        .creator-spotlight {
+            background: linear-gradient(90deg, var(--card-bg) 0%, rgba(26, 26, 46, 0.5) 100%);
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .creator-img {
+            flex: 1 1 300px;
+            min-height: 300px;
+            background: url('https://picsum.photos/seed/artist/600/600.jpg') center/cover;
+        }
+
+        .creator-content {
+            flex: 1 1 400px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .creator-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .creator-content p {
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f0f1a;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .creator-spotlight {
+                flex-direction: column;
+            }
+
+            .creator-img {
+                min-height: 200px;
+                flex: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span style="font-size: 2rem;">本</span>子节
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">作品展示</a></li>
+                    <li><a href="#">画师入驻</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-nav">投稿作品</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>汇聚灵感，记录热爱</h1>
+            <p>本子节是国内领先的二次元同人作品展示与创作交流社区。在这里，你可以发现优秀的同人创作，展示你的才华，或找到志同道合的伙伴。</p>
+            <div class="hero-btns">
+                <a href="#works" class="btn btn-primary">浏览热门作品</a>
+                <a href="#join" class="btn btn-outline">成为创作者</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>作品分类</h2>
+                <p>探索不同题材的同人创作世界</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <span class="cat-icon">⚔️</span>
+                    <h3>二次元</h3>
+                    <p>动漫、游戏角色同人</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🎨</span>
+                    <h3>原创插画</h3>
+                    <p>独立画师原创作品</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">📖</span>
+                    <h3>四格/短篇</h3>
+                    <p>轻松有趣的日常故事</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">👗</span>
+                    <h3>同人志</h3>
+                    <p>实体同人本展示</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Works Section -->
+    <section class="section" id="works" style="background-color: #16213e;">
+        <div class="container">
+            <div class="section-header">
+                <h2>热门作品</h2>
+                <p>本周最受关注的人气创作</p>
+            </div>
+            <div class="works-grid">
+                <!-- Work Card 1 -->
+                <article class="work-card">
+                    <img src="https://picsum.photos/seed/anime1/400/500" alt="同人作品封面" class="work-image">
+                    <div class="work-info">
+                        <div class="work-tags">
+                            <span class="tag">日漫</span>
+                            <span class="tag">治愈</span>
+                        </div>
+                        <h3 class="work-title">星夜下的约定</h3>
+                        <div class="work-creator">画师：星野</div>
+                    </div>
+                </article>
+
+                <!-- Work Card 2 -->
+                <article class="work-card">
+                    <img src="https://picsum.photos/seed/anime2/400/500" alt="同人作品封面" class="work-image">
+                    <div class="work-info">
+                        <div class="work-tags">
+                            <span class="tag">游戏</span>
+                            <span class="tag">战斗</span>
+                        </div>
+                        <h3 class="work-title">暗影刺客录</h3>
+                        <div class="work-creator">画师：夜鸦</div>
+                    </div>
+                </article>
+
+                <!-- Work Card 3 -->
+                <article class="work-card">
+                    <img src="https://picsum.photos/seed/anime3/400/500" alt="同人作品封面" class="work-image">
+                    <div class="work-info">
+                        <div class="work-tags">
+                            <span class="tag">原创</span>
+                            <span class="tag">奇幻</span>
+                        </div>
+                        <h3 class="work-title">失落王国的编年史</h3>
+                        <div class="work-creator">画师：绘梦者</div>
+                    </div>
+                </article>
+
+                <!-- Work Card 4 -->
+                <article class="work-card">
+                    <img src="https://picsum.photos/seed/anime4/400/500" alt="同人作品封面" class="work-image">
+                    <div class="work-info">
+                        <div class="work-tags">
+                            <span class="tag">日常</span>
+                            <span class="tag">校园</span>
+                        </div>
+                        <h3 class="work-title">放学后的秘密基地</h3>
+                        <div class="work-creator">画师：夏目</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creator Spotlight Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>画师推荐</h2>
+                <p>发掘优秀的同人创作者</p>
+            </div>
+            <div class="creator-spotlight">
+                <div class="creator-img"></div>
+                <div class="creator-content">
+                    <h3>林间鹿</h3>
+                    <p>活跃于同人展与网络平台的插画师，擅长清新唯美的日系风格。作品以细腻的线条和温柔的色调著称，深受二次元爱好者喜爱。</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <strong>1.2k</strong>
+                            <span>粉丝</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>85</strong>
+                            <span>作品</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>500+</strong>
+                            <span>获赞</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">关注画师</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="join">
+        <div class="container">
+            <h2>开启你的创作之旅</h2>
+            <p>无论你是资深画师还是萌新，本子节都欢迎你的加入。上传你的作品，分享你的热爱。</p>
+            <a href="#" class="btn btn-outline" style="background: white; color: var(--secondary-color);">立即注册</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于本子节</h4>
+                    <ul>
+                        <li><a href="#">平台简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">合作联系</a></li>
+                        <li><a href="#">社区规范</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>创作中心</h4>
+                    <ul>
+                        <li><a href="#">上传作品</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">最新更新</a></li>
+                        <li><a href="#">热门榜单</a></li>
+                        <li><a href="#">同人展讯</a></li>
+                        <li><a href="#">周边商城</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <p style="color: #888; font-size: 0.9rem;">获取最新创作动态与活动资讯。</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 本子节 All Rights Reserved. 本网站为演示设计，不包含实际商业内容。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
