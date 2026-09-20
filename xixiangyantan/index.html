@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西厢艳谭-古典文学经典改编与深度解读</title>
+    <meta name="description" content="本站致力于收录与解析中国古典文学名著《西厢艳谭》及相关改编影视作品。提供原著原文、版本考证、影视剧情介绍及人物关系图解，为古典文学爱好者提供专业的阅读与鉴赏平台。">
+    <meta name="keywords" content="西厢艳谭,西厢记,王实甫,古典文学,崔莺莺,张生,戏曲,在线阅读,文学鉴赏">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8e3a3a;
+            --secondary-color: #d4a373;
+            --bg-color: #fdfbf7;
+            --text-main: #2c2c2c;
+            --text-light: #666;
+            --border-color: #e0dcd5;
+            --card-shadow: 0 4px 12px rgba(142, 58, 58, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "SimSun", serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-family: "Songti SC", serif;
+            font-style: italic;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/culture/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            font-family: "Songti SC", serif;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #6e2e2e;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #fff;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: var(--text-main);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            font-family: "Songti SC", serif;
+        }
+
+        .section-title .divider {
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 0 auto;
+        }
+
+        /* Intro Section */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-text h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(142, 58, 58, 0.8);
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-body h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .card-body p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.3s;
+        }
+
+        .read-more:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Character Section */
+        .character-section {
+            background-color: #fff;
+            padding: 60px 0;
+        }
+
+        .character-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .character-item {
+            text-align: center;
+            width: 200px;
+        }
+
+        .char-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 3px solid var(--secondary-color);
+            padding: 3px;
+            background-clip: content-box;
+        }
+
+        .char-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .char-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .char-role {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+        }
+
+        /* Utility */
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo"><span>西厢艳谭</span> · 经典文学</a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#intro" class="active">原著简介</a></li>
+                    <li><a href="#characters">人物图谱</a></li>
+                    <li><a href="#adaptations">影视改编</a></li>
+                    <li><a href="#analysis">深度赏析</a></li>
+                    <li><a href="#about">关于本站</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>西厢艳谭</h1>
+            <p>中国古典文学浪漫主义的巅峰之作，描绘了一段跨越门第的真挚情感。</p>
+            <div>
+                <a href="#intro" class="btn">开始阅读</a>
+                <a href="#analysis" class="btn btn-outline">查看赏析</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container" id="intro">
+        <div class="section-title">
+            <h2>作品概述</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="intro-grid">
+            <div class="intro-text">
+                <h3>冲破封建礼教的自由恋歌</h3>
+                <p><strong>《西厢艳谭》</strong>（通常指基于王实甫《西厢记》及相关衍生版本的艺术化呈现）是中国戏曲史上一部杰出的喜剧作品。故事发生在普救寺，书生张君瑞与相国之女崔莺莺在侍女红娘的撮合下，冲破老夫人对婚姻“门当户对”的严苛规定，最终私定终身。</p>
+                <p>作品通过细腻的心理描写和生动的戏剧冲突，歌颂了青年男女追求自由爱情、反抗封建压迫的进步思想。它不仅是文学作品，更在后世被无数次改编为戏曲、电影和电视剧，成为中国古典爱情故事的经典范本。</p>
+                <p>本站收录了原著的精华片段、不同版本的影视资源以及文学评论，帮助读者全方位了解这一文化瑰宝。</p>
+            </div>
+            <div class="intro-image">
+                <img src="https://picsum.photos/seed/park/600/400.jpg" alt="普救寺风景示意图">
+            </div>
+        </div>
+    </main>
+
+    <section class="character-section" id="characters">
+        <div class="container">
+            <div class="section-title">
+                <h2>核心人物</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="character-list">
+                <div class="character-item">
+                    <div class="char-avatar">
+                        <img src="https://picsum.photos/seed/man/200/200.jpg" alt="张生画像">
+                    </div>
+                    <div class="char-name">张君瑞</div>
+                    <div class="char-role">书生 / 主人公</div>
+                </div>
+                <div class="character-item">
+                    <div class="char-avatar">
+                        <img src="https://picsum.photos/seed/woman/200/200.jpg" alt="崔莺莺画像">
+                    </div>
+                    <div class="char-name">崔莺莺</div>
+                    <div class="char-role">相国千金</div>
+                </div>
+                <div class="character-item">
+                    <div class="char-avatar">
+                        <img src="https://picsum.photos/seed/girl/200/200.jpg" alt="红娘画像">
+                    </div>
+                    <div class="char-name">红娘</div>
+                    <div class="char-role">侍女 / 破局者</div>
+                </div>
+                <div class="character-item">
+                    <div class="char-avatar">
+                        <img src="https://picsum.photos/seed/old/200/200.jpg" alt="崔老夫人画像">
+                    </div>
+                    <div class="char-name">崔老夫人</div>
+                    <div class="char-role">封建家长代表</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container" id="adaptations">
+        <div class="section-title">
+            <h2>影视改编与版本</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="content-grid">
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-tag">经典电影</span>
+                    <img src="https://picsum.photos/seed/movie1/400/300.jpg" alt="1956年电影海报">
+                </div>
+                <div class="card-body">
+                    <h4>1956年《西厢记》</h4>
+                    <p>中国电影制片厂出品，崔嵬、陈怀皑执导。这是中国戏曲电影史上的里程碑之作，将京剧艺术与电影语言完美结合，被誉为“中国戏曲电影的瑰宝”。</p>
+                    <a href="#" class="read-more">阅读详情</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-tag">电视剧</span>
+                    <img src="https://picsum.photos/seed/tv1/400/300.jpg" alt="电视剧剧照">
+                </div>
+                <div class="card-body">
+                    <h4>1998年《西厢记》</h4>
+                    <p>由陈凯歌监制，李少红执导的电视剧版本。该剧在尊重原著的基础上，对人物内心世界进行了更细腻的刻画，服化道考究，极具古典韵味。</p>
+                    <a href="#" class="read-more">阅读详情</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-tag">戏曲选段</span>
+                    <img src="https://picsum.photos/seed/opera/400/300.jpg" alt="京剧表演">
+                </div>
+                <div class="card-body">
+                    <h4>京剧《西厢记》</h4>
+                    <p>梅兰芳、程砚秋等大师均有精彩演绎。其中“长亭送别”一折，以凄美的唱腔和身段，表达了恋人离别的无限眷恋，是京剧艺术的经典保留剧目。</p>
+                    <a href="#" class="read-more">阅读详情</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <main class="container" id="analysis">
+        <div class="section-title">
+            <h2>深度赏析</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="intro-grid">
+            <div class="intro-text">
+                <h3>“长亭送别”的艺术魅力</h3>
+                <p>《西厢艳谭》中最脍炙人口的段落莫过于“长亭送别”。在古都汴梁的深秋，张生与莺莺依依惜别。这一段戏不仅是对离别之苦的渲染，更是对封建婚姻制度的一种无声控诉。</p>
+                <p>剧中“碧云天，黄花地，西风紧，北雁南飞”的唱词，借景抒情，将离愁别绪渲染得淋漓尽致。这种将个人情感融入宏大自然背景中的写法，展现了极高的文学造诣。</p>
+            </div>
+            <div class="intro-image">
+                <img src="https://picsum.photos/seed/maple/600/400.jpg" alt="长亭送别意境图">
+            </div>
+        </div>
+
+        <div class="intro-grid" style="margin-top: 60px;">
+            <div class="intro-image">
+                <img src="https://picsum.photos/seed/ancient/600/400.jpg" alt="古典园林意境">
+            </div>
+            <div class="intro-text">
+                <h3>红娘角色的文化意义</h3>
+                <p>红娘作为故事中的关键人物，其机智、勇敢和善良的形象深入人心。她不畏权势，敢于在老夫人面前据理力争，是“自由恋爱”的积极推动者。在现代语境中，“红娘”一词甚至成为了媒人的代名词。</p>
+                <p>通过红娘这一角色，作品展示了底层人物在封建等级森严的社会结构中，如何凭借智慧和勇气维护正义，这一形象具有跨越时代的现实意义。</p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于《西厢艳谭》</h4>
+                <p style="font-size: 14px; line-height: 1.6; color: #999;">
+                    本站是一个专注于中国古典文学与戏曲文化的非商业性学习交流平台。我们致力于整理和分享与《西厢记》相关的经典文本、影视资料及学术研究。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#intro">原著简介</a></li>
+                    <li><a href="#characters">人物关系</a></li>
+                    <li><a href="#adaptations">影视推荐</a></li>
+                    <li><a href="#analysis">赏析文章</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>版权声明</h4>
+                <ul>
+                    <li>本站内容仅供学习交流</li>
+                    <li>图片素材来源于网络</li>
+                    <li>如有版权问题请联系我们</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 西厢艳谭文化鉴赏站. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mainNav').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
