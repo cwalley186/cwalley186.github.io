@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恋爱中的人 - 情感指南、相处之道与关系维护</title>
+    <meta name="description" content="本站为恋爱中的人提供全面的关系维护指南，涵盖恋爱心理学、沟通技巧、冲突解决及长期关系经营建议，帮助您建立更健康、稳定的亲密关系。">
+    <meta name="keywords" content="恋爱中的人, 恋爱指南, 情感维护, 关系沟通, 恋爱心理学, 亲密关系">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e91e63;
+            --primary-light: #fce4ec;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #f9f9f9;
+            --white: #ffffff;
+            --radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #fff0f5 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background-color: #d81b60;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Article List */
+        .article-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .article-tag {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--secondary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+            color: var(--secondary-color);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .checklist-icon {
+            color: #4caf50;
+            margin-right: 10px;
+            font-size: 1.2rem;
+            margin-top: -2px;
+        }
+
+        .checklist-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Category Grid */
+        .category-section {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .cat-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--bg-color);
+            border-radius: var(--radius);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .cat-card:hover {
+            background: var(--white);
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow);
+        }
+
+        .cat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .cat-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .cat-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            background-color: var(--primary-light);
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none; /* Simplified for static demo */
+            }
+            
+            .header-inner {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                恋爱指南
+            </a>
+            <nav class="nav-links">
+                <a href="#start">新手入门</a>
+                <a href="#maintain">关系维护</a>
+                <a href="#conflict">冲突处理</a>
+                <a href="#psychology">心理学</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>恋爱中的人</h1>
+            <p>无论你是处于热恋期、磨合期还是稳定期，掌握科学的相处之道是维持长久幸福的关键。</p>
+            <a href="#maintain" class="cta-button">探索相处之道</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="main-grid">
+            <!-- Content Area -->
+            <section class="content">
+                <article class="article-card">
+                    <span class="article-tag">新手入门</span>
+                    <h2 class="article-title">恋爱初期：如何建立健康的边界感</h2>
+                    <p class="article-excerpt">对于恋爱中的人而言，亲密不代表无间。在热恋阶段建立清晰的个人边界，既能保护自我，也能让对方感到被尊重。</p>
+                    <a href="#" class="read-more">阅读全文 &rarr;</a>
+                </article>
+
+                <article class="article-card">
+                    <span class="article-tag">沟通技巧</span>
+                    <h2 class="article-title">非暴力沟通：如何让伴侣听懂你的心声</h2>
+                    <p class="article-excerpt">很多时候争吵源于表达方式的错位。学会观察、感受、需要和请求这四个步骤，能大幅降低关系中的摩擦成本。</p>
+                    <a href="#" class="read-more">阅读全文 &rarr;</a>
+                </article>
+
+                <article class="article-card">
+                    <span class="article-tag">长期关系</span>
+                    <h2 class="article-title">七年之痒与平淡期：激情褪去后的相处艺术</h2>
+                    <p class="article-excerpt">恋爱中的人往往会经历激情消退的阶段。这并非关系的终点，而是从浪漫之爱转向伴侣之爱的转折点。</p>
+                    <a href="#" class="read-more">阅读全文 &rarr;</a>
+                </article>
+
+                <article class="article-card">
+                    <span class="article-tag">心理建设</span>
+                    <h2 class="article-title">恋爱中的依恋类型：你是焦虑型还是回避型？</h2>
+                    <p class="article-excerpt">了解自己的依恋模式是自我成长的第一步。识别并调整不健康的依恋行为，能让你在关系中更加从容自信。</p>
+                    <a href="#" class="read-more">阅读全文 &rarr;</a>
+                </article>
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">恋爱必修课</h3>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">✓</span>
+                        <span class="checklist-text">每日一句赞美</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">✓</span>
+                        <span class="checklist-text">每周一次深度谈话</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">✓</span>
+                        <span class="checklist-text">保持个人爱好</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">✓</span>
+                        <span class="checklist-text">共同制定未来计划</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">常见误区</h3>
+                    <ul style="font-size: 0.95rem; color: var(--text-light);">
+                        <li style="margin-bottom:10px;">❌ 认为对方应该完全读懂你的想法</li>
+                        <li style="margin-bottom:10px;">❌ 在争吵时翻旧账</li>
+                        <li style="margin-bottom:10px;">❌ 忽视了情绪价值的重要性</li>
+                        <li>❌ 试图改变对方的性格</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <section class="category-section" id="start">
+            <div class="section-header">
+                <h2>恋爱中的关键维度</h2>
+                <p>根据不同阶段和需求，探索适合你的关系管理方法</p>
+            </div>
+            <div class="category-grid">
+                <div class="cat-card">
+                    <span class="cat-icon">🛡️</span>
+                    <h3 class="cat-title">信任与安全感</h3>
+                    <p class="cat-desc">建立稳固的信任基石，减少猜疑，让关系更安心。</p>
+                </div>
+                <div class="cat-card">
+                    <span class="cat-icon">💬</span>
+                    <h3 class="cat-title">有效沟通</h3>
+                    <p class="cat-desc">学会倾听与表达，让每一次对话都成为增进感情的契机。</p>
+                </div>
+                <div class="cat-card">
+                    <span class="cat-icon">⚖️</span>
+                    <h3 class="cat-title">独立与依赖</h3>
+                    <p class="cat-desc">平衡个人空间与共同生活，享受“1+1>2”的亲密关系。</p>
+                </div>
+                <div class="cat-card">
+                    <span class="cat-icon">🛌</span>
+                    <h3 class="cat-title">亲密接触</h3>
+                    <p class="cat-desc">拥抱、牵手与性，是维系身体与情感连接的重要纽带。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section" id="psychology">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">恋爱中的人该如何处理冷战？</div>
+                    <div class="faq-answer">冷战往往会让双方感到被忽视和受伤。建议打破沉默，通过温和的方式表达自己的感受，例如：“我很在乎我们的关系，我希望我们可以坐下来聊聊。”</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何判断这段关系是否健康？</div>
+                    <div class="faq-answer">健康的关系通常具有以下特征：相互尊重、信任、支持对方的成长、能够顺畅地沟通负面情绪，以及双方在关系中感到被接纳和被爱。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">总是忍不住查伴侣手机怎么办？</div>
+                    <div class="faq-answer">这通常源于不安全感。建议先自我反思根源，尝试通过增加沟通频率来建立信任，而不是通过监控来寻求安心。必要时可寻求心理咨询帮助。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">我们致力于为恋爱中的人提供科学、客观、温暖的关系建议，帮助每一对伴侣更好地理解彼此，经营幸福。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门话题</h4>
+                    <ul>
+                        <li><a href="#">异地恋维护</a></li>
+                        <li><a href="#">婚前准备</a></li>
+                        <li><a href="#">中年夫妻</a></li>
+                        <li><a href="#">恋爱心理学</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>免责声明</h4>
+                    <ul>
+                        <li><a href="#">内容仅供参考</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 恋爱指南网. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
